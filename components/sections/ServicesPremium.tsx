@@ -48,6 +48,21 @@ export default function ServicesPremium() {
             </div>
           ))}
         </div>
+
+        <div className="mt-12 rounded-3xl border border-slate-800 bg-slate-900 p-8 text-center">
+          <h3 className="text-2xl font-bold text-white">
+            ¿Tienes un sistema que requiere mejoras o un proceso que todavía depende de Excel?
+          </h3>
+          <p className="mx-auto mt-4 max-w-2xl text-slate-300 leading-7">
+            Puedo ayudarte a revisar el caso, ordenar el alcance y proponer una ruta de solución clara.
+          </p>
+          <a
+            href="#contacto"
+            className="mt-6 inline-flex rounded-full bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-slate-200"
+          >
+            Hablar sobre un proyecto
+          </a>
+        </div>
       </div>
     </section>
   );

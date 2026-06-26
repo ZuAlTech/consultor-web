@@ -7,11 +7,10 @@ export default function ContactPremium() {
             Contacto
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">
-            Si tienes un sistema que mejorar o reportes que automatizar, conversemos
+            ¿Tienes un sistema que necesita soporte, mejoras o automatización?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-slate-300 leading-8">
-            Puedo ayudarte a evaluar el problema, definir una ruta clara y ejecutar
-            una solución realista según tus necesidades.
+            Puedo ayudarte a evaluar el problema, ordenar el alcance y proponer una solución realista para tu operación.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
@@ -19,7 +18,7 @@ export default function ContactPremium() {
               href="mailto:zualtech@gmail.com"
               className="rounded-full bg-white px-6 py-3 font-semibold text-slate-950 transition hover:bg-slate-200"
             >
-              Enviar correo
+              Solicitar diagnóstico
             </a>
             <a
               href="https://wa.me/525579961207"
@@ -35,7 +34,7 @@ export default function ContactPremium() {
               rel="noreferrer"
               className="rounded-full border border-slate-500 px-6 py-3 font-semibold text-white transition hover:border-white"
             >
-              Ver LinkedIn
+              Enviar correo / LinkedIn
             </a>
           </div>
         </div>

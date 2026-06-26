@@ -10,7 +10,11 @@ export default function TrustBar() {
     <section id="experiencia" className="border-y border-slate-200 bg-white">
       <div className="mx-auto max-w-7xl px-6 py-10">
         <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
-          Experiencia en entornos institucionales, consultoría y banca
+          Experiencia en sector público, consultoría y banca
+        </p>
+        <p className="mx-auto mt-3 max-w-3xl text-center text-sm leading-7 text-slate-600">
+          Participación en proyectos para instituciones y organizaciones con alta exigencia operativa,
+          donde la continuidad, la trazabilidad y la estabilidad técnica son críticas.
         </p>
 
         <div className="mt-6 grid gap-4 text-center sm:grid-cols-2 lg:grid-cols-4">

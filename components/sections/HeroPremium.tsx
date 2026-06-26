@@ -13,13 +13,12 @@ export default function HeroPremium() {
           </div>
 
           <h1 className="mt-6 text-4xl font-extrabold tracking-tight text-slate-950 md:text-6xl">
-            Mejora tus sistemas internos y convierte datos en decisiones
+            Ayudo a empresas a mejorar sistemas, automatizar reportes y reducir fricción operativa
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-            Apoyo a empresas en mantenimiento evolutivo, desarrollo de módulos,
-            automatización de reportes y consultoría técnica con .NET, SQL Server,
-            Azure y Microsoft Fabric.
+            Consultoría técnica para empresas que necesitan soporte evolutivo, desarrollo de módulos,
+            automatización de datos y mayor claridad operativa con .NET, SQL Server, Azure y Microsoft Fabric.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -30,10 +29,10 @@ export default function HeroPremium() {
               Solicitar diagnóstico
             </a>
             <a
-              href="#casos"
+              href="#servicios"
               className="rounded-full border border-slate-300 bg-white px-6 py-3 text-center font-semibold text-slate-900 transition hover:border-slate-900"
             >
-              Ver casos de uso
+              Ver servicios
             </a>
           </div>
 
@@ -58,11 +57,11 @@ export default function HeroPremium() {
             <div className="rounded-2xl bg-slate-950 p-6 text-white">
               <p className="text-sm text-sky-300">Qué aporto</p>
               <h3 className="mt-2 text-2xl font-bold">
-                Menos fricción operativa, más control y continuidad
+                Soluciones útiles para operación, soporte y crecimiento
               </h3>
               <p className="mt-4 text-sm leading-7 text-slate-300">
-                No solo desarrollo software: ayudo a traducir necesidades del negocio
-                en soluciones estables, publicables y útiles para usuarios y operación.
+                No solo desarrollo software: ayudo a estructurar necesidades del negocio,
+                convertirlas en soluciones funcionales y dar continuidad técnica a sistemas que ya están en operación.
               </p>
             </div>
 
