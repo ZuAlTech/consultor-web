@@ -1,18 +1,26 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRightLeft, BarChart3, LifeBuoy } from "lucide-react";
+
 const cases = [
   {
+    icon: LifeBuoy,
     title: "Mejora de sistema interno existente",
     result:
-      "Soporte evolutivo, corrección de errores y desarrollo de nuevas funcionalidades sobre plataformas ya en operación.",
+      "Apoyo a organizaciones que ya cuentan con una aplicación en operación pero necesitan resolver incidencias, mejorar estabilidad y evolucionar funcionalidades sin detener la operación.",
   },
   {
+    icon: BarChart3,
     title: "Automatización de reporting",
     result:
-      "Consolidación de datos operativos y transformación de reportes manuales en tableros más claros y accionables.",
+      "Intervengo en escenarios donde la información sigue consolidándose de forma manual, ayudando a estructurar datos, automatizar reportes y dar mayor visibilidad a la operación.",
   },
   {
+    icon: ArrowRightLeft,
     title: "Acompañamiento técnico y funcional",
     result:
-      "Levantamiento de requerimientos, documentación y capacitación para alinear operación, usuarios y desarrollo.",
+      "Participo en proyectos que requieren traducir necesidades del negocio en entregables claros, con levantamiento de requerimientos, documentación y acompañamiento a usuarios.",
   },
 ];
 
@@ -30,15 +38,27 @@ export default function CaseStudies() {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {cases.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
-            >
-              <h3 className="text-xl font-semibold text-slate-950">{item.title}</h3>
-              <p className="mt-4 leading-7 text-slate-600">{item.result}</p>
-            </div>
-          ))}
+          {cases.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: index * 0.05 }}
+                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="rounded-2xl bg-sky-50 p-3">
+                    <Icon className="h-5 w-5 text-sky-700" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-slate-950">{item.title}</h3>
+                </div>
+                <p className="mt-4 leading-7 text-slate-600">{item.result}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

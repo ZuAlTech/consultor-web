@@ -1,21 +1,25 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const testimonials = [
   {
     quote:
-      "Alejandro combina capacidad técnica con entendimiento funcional, lo que facilita convertir necesidades del área en soluciones utilizables.",
-    name: "Perfil de cliente / líder de proyecto",
-    role: "Referencia profesional",
+      "Alejandro destaca por su capacidad para entender la necesidad funcional y aterrizarla técnicamente con orden, claridad y seguimiento.",
+    name: "Líder de proyecto / entorno institucional",
+    role: "Referencia profesional sugerida",
   },
   {
     quote:
-      "Aporta orden, seguimiento y criterio técnico. No solo ejecuta tareas: ayuda a estructurar mejor el trabajo.",
-    name: "Perfil de equipo / consultoría",
-    role: "Referencia profesional",
+      "Aporta criterio técnico, estructura de trabajo y buena comunicación con usuarios y equipos, lo que ayuda a dar continuidad real a los proyectos.",
+    name: "Consultoría / coordinación técnica",
+    role: "Referencia profesional sugerida",
   },
   {
     quote:
-      "Su experiencia en sistemas, bases de datos y acompañamiento a usuarios genera confianza en proyectos donde se requiere continuidad.",
-    name: "Perfil institucional / corporativo",
-    role: "Referencia profesional",
+      "Su combinación de desarrollo, análisis y acompañamiento funcional genera confianza en proyectos donde la estabilidad y la entrega son clave.",
+    name: "Cliente interno / responsable operativo",
+    role: "Referencia profesional sugerida",
   },
 ];
 
@@ -28,18 +32,21 @@ export default function Testimonials() {
             Testimonios
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-slate-950 md:text-4xl">
-            Percepción de valor que busco generar en cada proyecto
+            Cómo busco ser percibido en cada proyecto
           </h2>
           <p className="mt-4 text-slate-600">
-            Puedes reemplazar estos textos por testimonios reales en cuanto empieces
-            a pedir referencias formales a colegas, jefes o clientes.
+            Estos textos ya están redactados con un tono más realista. Después puedes sustituirlos por testimonios reales de colegas, líderes o clientes.
           </p>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
-          {testimonials.map((item) => (
-            <div
+          {testimonials.map((item, index) => (
+            <motion.div
               key={item.quote}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.45, delay: index * 0.05 }}
               className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm"
             >
               <p className="text-lg leading-8 text-slate-700">“{item.quote}”</p>
@@ -47,7 +54,7 @@ export default function Testimonials() {
                 <p className="font-semibold text-slate-950">{item.name}</p>
                 <p className="text-sm text-slate-500">{item.role}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

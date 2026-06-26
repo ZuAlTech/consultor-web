@@ -1,20 +1,29 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { BarChart3, BriefcaseBusiness, Cpu, FileSearch } from "lucide-react";
+
 const services = [
   {
+    icon: BriefcaseBusiness,
     title: "Mantenimiento y mejora de sistemas empresariales",
     description:
       "Corrección de errores, soporte evolutivo, nuevos módulos, optimización de SQL Server y mejoras funcionales para sistemas existentes.",
   },
   {
+    icon: Cpu,
     title: "Desarrollo de módulos internos en .NET",
     description:
       "Construcción de componentes administrativos y operativos para control, seguimiento y digitalización de procesos internos.",
   },
   {
+    icon: BarChart3,
     title: "Automatización de reportes y dashboards",
     description:
       "Integración, limpieza, modelado y visualización de datos con SQL Server, Azure y Microsoft Fabric.",
   },
   {
+    icon: FileSearch,
     title: "Consultoría técnica externa",
     description:
       "Levantamiento de requerimientos, análisis funcional, documentación, capacitación y acompañamiento técnico para equipos y empresas.",
@@ -38,15 +47,27 @@ export default function ServicesPremium() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8"
-            >
-              <h3 className="text-xl font-semibold">{service.title}</h3>
-              <p className="mt-4 leading-7 text-slate-300">{service.description}</p>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: index * 0.05 }}
+                className="rounded-3xl border border-slate-800 bg-slate-900/70 p-8"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="rounded-2xl bg-sky-500/10 p-3">
+                    <Icon className="h-5 w-5 text-sky-300" />
+                  </div>
+                  <h3 className="text-xl font-semibold">{service.title}</h3>
+                </div>
+                <p className="mt-4 leading-7 text-slate-300">{service.description}</p>
+              </motion.div>
+            );
+          })}
         </div>
 
         <div className="mt-12 rounded-3xl border border-slate-800 bg-slate-900 p-8 text-center">

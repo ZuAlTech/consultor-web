@@ -1,10 +1,33 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { AlertCircle, BarChart3, Bug, Database, FileSpreadsheet, Workflow } from "lucide-react";
+
 const problems = [
-  "Sistemas internos lentos, inestables o con errores recurrentes",
-  "Reportes operativos que siguen dependiendo de Excel manual",
-  "Procesos críticos sin trazabilidad ni automatización",
-  "Cambios pendientes que el equipo interno no alcanza a atender",
-  "Dependencia de una sola persona para soporte técnico",
-  "Falta de visibilidad clara sobre datos para tomar decisiones",
+  {
+    icon: Bug,
+    text: "Sistemas internos lentos, inestables o con errores recurrentes",
+  },
+  {
+    icon: FileSpreadsheet,
+    text: "Reportes operativos que siguen dependiendo de Excel manual",
+  },
+  {
+    icon: Workflow,
+    text: "Procesos críticos sin trazabilidad ni automatización",
+  },
+  {
+    icon: AlertCircle,
+    text: "Cambios pendientes que el equipo interno no alcanza a atender",
+  },
+  {
+    icon: Database,
+    text: "Dependencia de una sola persona para soporte técnico",
+  },
+  {
+    icon: BarChart3,
+    text: "Falta de visibilidad clara sobre datos para tomar decisiones",
+  },
 ];
 
 export default function ProblemsPremium() {
@@ -25,14 +48,26 @@ export default function ProblemsPremium() {
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {problems.map((problem) => (
-            <div
-              key={problem}
-              className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
-            >
-              <p className="text-base leading-7 text-slate-700">{problem}</p>
-            </div>
-          ))}
+          {problems.map((problem, index) => {
+            const Icon = problem.icon;
+            return (
+              <motion.div
+                key={problem.text}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.45, delay: index * 0.05 }}
+                className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="rounded-2xl bg-sky-50 p-3">
+                    <Icon className="h-5 w-5 text-sky-700" />
+                  </div>
+                  <p className="text-base leading-7 text-slate-700">{problem.text}</p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
